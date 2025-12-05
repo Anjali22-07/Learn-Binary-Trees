@@ -30,9 +30,7 @@ public class BasicsOfBinaryTree{
 
    //to find the size of the Binary Trees
 
-   public static int size(){
-
-   }
+   
     public static void main(String[] args){
     
          Node root= new Node(2);
