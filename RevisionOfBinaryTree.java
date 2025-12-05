@@ -65,7 +65,7 @@ static class BinaryTree{
   }
 
   //Inorder Traversal 
-  public void inorderDisplay(Node root){ //[left->root->right]
+  public void inorderDisplay(Node root){  //[left->root->right]
     if(root==null){
       return;
     }
@@ -90,14 +90,29 @@ static class BinaryTree{
 
   //level order Traversal --  BFS Traversal
 
+  public void bfs(Node root){
+    
+    if(root== null){
+      return;
+    }
   
+  Queue<Node> qt=new LinkedList<>();
+  qt.add(root);
+  while(!qt.isEmpty()){
+    Node temp = qt.peek();
+    if(temp.left!=null){
+      qt.add(temp.left);
+    }
+    if(temp.right!=null){
+      qt.add(temp.right);
+    }
+    System.out.println(qt.remove().val);
+  }
+
+  }
 
 
 }
-
-
-
-
 public static void main(String[] args) {
   BinaryTree bt= new BinaryTree();
     bt.insertion(1);
@@ -105,7 +120,7 @@ public static void main(String[] args) {
     bt.insertion(5);
     bt.insertion(6);
 
-    bt.postorderDisplay(bt.root);
+    bt.bfs(bt.root);
 }
 
 
